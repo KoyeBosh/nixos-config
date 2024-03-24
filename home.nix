@@ -38,7 +38,7 @@
 				man = "batman";
 				jrun = "mvn compile && mvn exec:java";
 				nixr = "sudo nixos-rebuild switch --flake ~/.nixos";
-				nixh = "home-manager switch --flake ~/.nixos";
+				nixh = "home-manager switch --flake ~/.nixos --impure";
 				nixu = "nix flake update ~/.nixos && nixr && nixh";
 			};
 			autosuggestion.enable = true;
