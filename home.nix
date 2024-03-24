@@ -5,7 +5,7 @@
 	home.homeDirectory = "/home/koye";
 
 	home.file = {
-		".config/hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
+		".config/hypr/hyprland.conf".source = config/hypr/hyprland.conf;
 	};
 
 	home.sessionVariables = {
@@ -18,6 +18,10 @@
 		name = "Adwaita";
 		size = 16;
 	};
+
+	home.packages = with pkgs; [
+		hello # he gets to stay
+	]
 
 	programs = {
 		zsh = {
