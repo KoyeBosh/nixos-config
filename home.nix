@@ -5,7 +5,8 @@
 	home.homeDirectory = "/home/koye";
 
 	home.file = {
-		".config/hypr/hyprland.conf".source = config/hypr/hyprland.conf;
+#		".config/hypr/hyprland.conf".source = config/hypr/hyprland.conf;
+#		Causing issues -- will return to this
 	};
 
 	home.sessionVariables = {
@@ -38,7 +39,7 @@
 				man = "batman";
 				jrun = "mvn compile && mvn exec:java";
 				nixr = "sudo nixos-rebuild switch --flake ~/.nixos";
-				nixh = "home-manager switch --flake ~/.nixos --impure";
+				nixh = "home-manager switch --flake ~/.nixos";
 				nixu = "nix flake update ~/.nixos && nixr && nixh";
 			};
 			autosuggestion.enable = true;
