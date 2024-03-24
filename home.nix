@@ -21,7 +21,7 @@
 
 	home.packages = with pkgs; [
 		hello # he gets to stay
-	]
+	];
 
 	programs = {
 		zsh = {
