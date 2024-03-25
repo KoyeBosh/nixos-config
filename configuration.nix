@@ -12,6 +12,7 @@
     ];
 
   # Bootloader.
+  boot.kernelPackages = pkgs.linuxPackages_latest; # somehow not the default on unstable
   boot.loader.grub.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
@@ -151,6 +152,7 @@
 	eza
 	zoxide
 	udiskie
+	ntfs3g
 	swaylock-effects
 	swayidle
 	killall
@@ -161,9 +163,15 @@
 	zathura
   ];
 
+  environment.sessionVariables = {
+    # SDL_VIDEODRIVER = "x11"; # tf2
+  };
+
   fonts.packages = with pkgs; [
 	twitter-color-emoji
 	noto-fonts
+	noto-fonts-cjk
+	liberation_ttf
 	jetbrains-mono
 	(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
@@ -196,6 +204,11 @@
     };
     steam = {
       enable = true;
+      package = pkgs.steam.override {
+		extraEnv = {
+          SDL_VIDEODRIVER = "x11";
+		};
+      };
     };
     hyprland = {
       enable = true;
