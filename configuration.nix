@@ -166,6 +166,9 @@
 	(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
+  qt.style = "adwaita";
+  qt.platformTheme = "gnome";
+
   security.pam.services.swaylock = {};
 
   programs = {

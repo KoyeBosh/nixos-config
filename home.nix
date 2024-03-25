@@ -53,6 +53,13 @@
 		};
 	};
 
+	gtk = {
+		enable = true;
+		theme = {
+			package = pkgs.adw-gtk3;
+		};
+	};
+
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
 
