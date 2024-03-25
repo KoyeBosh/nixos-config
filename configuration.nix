@@ -68,6 +68,7 @@
   services.printing.enable = true;
 
   services.dbus.implementation = "broker";
+  services.udisks2.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
