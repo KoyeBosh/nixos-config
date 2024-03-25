@@ -22,6 +22,7 @@
 
 	home.packages = with pkgs; [
 		hello # he gets to stay
+		htop
 	];
 
 	programs = {
@@ -39,7 +40,6 @@
 				man = "batman";
 				jrun = "mvn compile && mvn exec:java";
 				nixr = "sudo nixos-rebuild switch --flake ~/nixos-config";
-				nixh = "home-manager switch --flake ~/nixos-config";
 				nixu = "nix flake update ~/nixos-config && nixr && nixh";
 			};
 			autosuggestion.enable = true;

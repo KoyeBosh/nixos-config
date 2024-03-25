@@ -125,7 +125,6 @@
 	gnome.nautilus
 	btop
 	neofetch
-	home-manager
 	firefox
 	git
 	gh
