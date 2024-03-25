@@ -121,9 +121,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  services.xserver.videoDrivers = [ "modesetting" "intel" ];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+	intel-compute-runtime
+	intel-media-driver
 	gnome.nautilus
 	gradience
 	btop
