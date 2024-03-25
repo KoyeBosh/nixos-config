@@ -126,6 +126,7 @@
 	btop
 	neofetch
 	firefox
+	chromium
 	git
 	gh
 	neovide
