@@ -38,9 +38,9 @@
 				svim = "sudo -E neovide --no-fork &> /dev/null";
 				man = "batman";
 				jrun = "mvn compile && mvn exec:java";
-				nixr = "sudo nixos-rebuild switch --flake ~/.nixos-config";
-				nixh = "home-manager switch --flake ~/.nixos-config";
-				nixu = "nix flake update ~/.nixos-config && nixr && nixh";
+				nixr = "sudo nixos-rebuild switch --flake ~/nixos-config";
+				nixh = "home-manager switch --flake ~/nixos-config";
+				nixu = "nix flake update ~/nixos-config && nixr && nixh";
 			};
 			autosuggestion.enable = true;
 			syntaxHighlighting.enable = true;
