@@ -40,7 +40,7 @@
 				man = "batman";
 				jrun = "mvn compile && mvn exec:java";
 				nixr = "sudo nixos-rebuild switch --flake ~/nixos-config";
-				nixu = "nix flake update ~/nixos-config && nixr && nixh";
+				nixu = "nix flake update ~/nixos-config && nixr";
 			};
 			autosuggestion.enable = true;
 			syntaxHighlighting.enable = true;
