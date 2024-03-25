@@ -39,7 +39,8 @@
 				man = "batman";
 				jrun = "mvn compile && mvn exec:java";
 				nixr = "sudo nixos-rebuild switch --flake ~/nixos-config";
-				nixu = "nix flake update ~/nixos-config && nixr";
+				nixb = "sudo nixos-rebuild boot --flake ~/nixos-config"; # I have trauma
+				nixu = "nix flake update ~/nixos-config";
 			};
 			autosuggestion.enable = true;
 			syntaxHighlighting.enable = true;
