@@ -158,6 +158,8 @@
   ];
 
   fonts.packages = with pkgs; [
+	twitter-color-emoji
+	noto-fonts
 	jetbrains-mono
 	(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
