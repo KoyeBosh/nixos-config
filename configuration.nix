@@ -123,6 +123,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 	gnome.nautilus
+	gradience
 	btop
 	neofetch
 	firefox
