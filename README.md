@@ -2,7 +2,7 @@ This is a NixOS flake that defines both my system and user configuration declara
 
 From within this directory:
 - Regenerate NixOS using `sudo nixos-rebuild switch --flake .`
-- Home-manage using `home-manager switch --flake .`
-- Update software repository using `nix flake update .`
+- Update the software repository using `nix flake update .`
 
-The aliases `nixr`, `nixh`, and `nixu` are defined respectively, and can be ran from anywhere. The `nixu` alias also performs a full system regeneration. 
+The aliases `nixr` and `nixu` are defined respectively, and can be ran from anywhere. If making massive changes, `nixb` 
+will regenerate NixOS and add a boot entry without performing an in-place switcheroo ~~that wipes out your efi partition~~.
