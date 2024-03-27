@@ -12,7 +12,7 @@
 		];
 
 # Bootloader.
-	boot.kernelPackages = pkgs.linuxPackages_latest; # somehow not the default on unstable
+	boot.kernelPackages = pkgs.linuxPackages_latest;
 		boot.loader.grub.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
 	boot.loader.grub = {
@@ -23,22 +23,12 @@
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-	networking.hostName = "nixos"; # Define your hostname.
-# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+	networking.hostName = "nixos";
+	networking.networkmanager.enable = true;
 
-# Configure network proxy if necessary
-# networking.proxy.default = "http://user:password@proxy:port/";
-# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-# Enable networking
-		networking.networkmanager.enable = true;
-
-# Set your time zone.
+# Set time and locale.
 	time.timeZone = "America/Phoenix";
-
-# Select internationalisation properties.
 	i18n.defaultLocale = "en_US.UTF-8";
-
 	i18n.extraLocaleSettings = {
 		LC_ADDRESS = "en_US.UTF-8";
 		LC_IDENTIFICATION = "en_US.UTF-8";
@@ -54,7 +44,7 @@
 # Enable the X11 windowing system.
 	services.xserver.enable = true;
 
-# Enable the GNOME Desktop Environment.
+# Enable GDM, for now.
 	services.xserver.displayManager.gdm.enable = true;
 # services.xserver.desktopManager.gnome.enable = true;
 	xdg.portal.enable = true;
@@ -67,11 +57,6 @@
 
 # Enable CUPS to print documents.
 	services.printing.enable = true;
-
-	services.power-profiles-daemon.enable = true;
-
-	services.dbus.implementation = "broker";
-	services.udisks2.enable = true;
 
 # Enable sound with pipewire.
 	sound.enable = true;
@@ -172,6 +157,7 @@
 # SDL_VIDEODRIVER = "x11"; # tf2
 	};
 
+# Add fonts.
 	fonts.packages = with pkgs; [
 		twitter-color-emoji
 		noto-fonts
@@ -184,6 +170,7 @@
 	qt.style = "adwaita";
 	qt.platformTheme = "gnome";
 
+# Swaylock is special.
 	security.pam.services.swaylock = {};
 
 	programs = {
@@ -224,18 +211,12 @@
 		enable = true;
 		memoryPercent = 100;
 	};
-# Some programs need SUID wrappers, can be configured further or are
-# started in user sessions.
-# programs.mtr.enable = true;
-# programs.gnupg.agent = {
-#   enable = true;
-#   enableSSHSupport = true;
-# };
 
-# List services that you want to enable:
-
-# Enable the OpenSSH daemon.
+# Enable services.
 	services.openssh.enable = true;
+	services.power-profiles-daemon.enable = true;
+	services.dbus.implementation = "broker";
+	services.udisks2.enable = true;
 
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions
@@ -243,6 +224,5 @@
 # this value at the release version of the first install of this system.
 # Before changing this value read the documentation for this option
 # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-	system.stateVersion = "23.11"; # Did you read the comment?
-
+	system.stateVersion = "23.11";
 }
