@@ -38,8 +38,10 @@
 				svim = "sudo -E neovide --no-fork &> /dev/null";
 				man = "batman";
 				jrun = "mvn compile && mvn exec:java";
-				nixr = "sudo nixos-rebuild switch --flake ~/nixos-config";
-				nixb = "sudo nixos-rebuild boot --flake ~/nixos-config"; # I have trauma
+# Nix likes to touch the .git directory as root :)
+				nix-chown = "sudo chown -R koye ~/nixos-config";
+				nixr = "sudo nixos-rebuild switch --flake ~/nixos-config && nix-chown";
+				nixb = "sudo nixos-rebuild boot --flake ~/nixos-config && nix-chown";
 				nixu = "nix flake update ~/nixos-config";
 			};
 			autosuggestion.enable = true;
