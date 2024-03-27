@@ -20,9 +20,9 @@
 		size = 16;
 	};
 
-	home.packages = with pkgs; [
-		hello # he gets to stay
-	];
+#	home.packages = with pkgs; [
+#		hello
+#	];
 
 	programs = {
 		zsh = {

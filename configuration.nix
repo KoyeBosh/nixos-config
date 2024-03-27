@@ -95,9 +95,6 @@
 			description = "Koye";
 			extraGroups = [ "networkmanager" "wheel" ];
 			shell = pkgs.zsh;
-			packages = with pkgs; [
-				discord
-			];
 		};
 		defaultUserShell = pkgs.zsh; # sets the root user's shell to zsh
 	};
