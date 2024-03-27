@@ -58,12 +58,9 @@
 # Enable GDM, for now.
 	services.xserver.displayManager.gdm.enable = true;
 # services.xserver.desktopManager.gnome.enable = true;
-	xdg.portal.enable = true;
-
-# Configure keymap in X11
-	services.xserver = {
-		xkb.layout = "us";
-		xkb.variant = "";
+	xdg.portal = {
+		enable = true;
+		extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	};
 
 # Enable CUPS to print documents.
