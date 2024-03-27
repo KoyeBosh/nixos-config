@@ -11,6 +11,17 @@
 			inputs.home-manager.nixosModules.default
 		];
 
+# Set filesystem options outside of hardware-configuration.nix
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/91f3764f-2fb8-4a89-86b1-cb8b89f7f9ab";
+      fsType = "btrfs";
+      options = [ "subvol=@" "compress=zstd" ];
+    };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/443F-918E";
+      fsType = "vfat";
+    };
+
 # Bootloader.
 	boot.kernelPackages = pkgs.linuxPackages_latest;
 		boot.loader.grub.enable = true;
@@ -104,7 +115,6 @@
 # Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
 
-	services.xserver.videoDrivers = [ "modesetting" "intel" ];
 # List packages installed in system profile. To search, run:
 # $ nix search wget
 	environment.systemPackages = with pkgs; [
