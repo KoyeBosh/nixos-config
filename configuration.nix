@@ -115,6 +115,7 @@
 		jdk8
 		jdt-language-server
 		lua-language-server
+		nil
 		rust-analyzer
 		intel-compute-runtime
 		intel-media-driver
