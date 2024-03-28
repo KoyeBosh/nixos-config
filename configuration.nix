@@ -112,6 +112,9 @@
 # List packages installed in system profile. To search, run:
 # $ nix search wget
 	environment.systemPackages = with pkgs; [
+		obsidian
+		obs-studio
+		zoom-us
 		jdk8
 		jdt-language-server
 		lua-language-server
